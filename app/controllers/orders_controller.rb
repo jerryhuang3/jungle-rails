@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    puts "THIS IS #{@order.email}"
+    puts "THIS IS #{@order.line_items.product}"
   end
 
   def create
