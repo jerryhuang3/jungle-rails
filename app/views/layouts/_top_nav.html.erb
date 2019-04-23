@@ -7,8 +7,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <%= image_tag "alligator.png", :class => "logo" %>
       <a class="navbar-brand" href="/">tinyJungle</a>
-    </div>
+      </div>
+     
+      
+    
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -29,10 +33,10 @@
       <ul class="nav navbar-nav navbar-right">
       
         <% if current_user %>
-         <li>
-          Signed in as <%= current_user.first_name %>
-          </li>
-          <li>
+        <li>
+          <%= link_to "Hi #{current_user.first_name}!" %>
+        </li>
+        <li>
           <%= link_to "Logout", '/logout' %>
         </li>
         <% else %>
