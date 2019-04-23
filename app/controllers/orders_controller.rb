@@ -2,8 +2,6 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    puts "THIS IS #{@order.email}"
-    puts "THIS IS #{@order.line_items.product}"
   end
 
   def create
@@ -32,7 +30,7 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
+      description: params[:stripeName],
       currency:    'cad'
     )
   end
@@ -55,6 +53,7 @@ class OrdersController < ApplicationController
       )
     end
     order.save!
+    OrderMailer.order_email(order).deliver_later
     order
   end
 

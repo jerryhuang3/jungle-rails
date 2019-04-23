@@ -1,15 +1,9 @@
-<section class="orders-show">
 
-  <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
-  </header>
-
-  <div class="order-summary jumbotron">
-    <h4>Thank you for your order <%= current_user.email %>!</h4>  
-  </div>
-
-   <div class="panel panel-default items">
-    <table class="table table-bordered">
+    <h1>Thank you for your purchase, <%= @order.email %>!</h1>
+    <p>
+      Your Order ID is: <%= @order.id %>.<br>
+    </p>
+     <table>
       <thead>
         <tr>
           <th colspan="2">Product</th>
@@ -36,8 +30,4 @@
         </tr>
       </tfoot>
     </table>
-  </div>
-
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
-</section>
+    <p>Have a great day!</p>
