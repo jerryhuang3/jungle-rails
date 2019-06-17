@@ -2,6 +2,10 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Preview
+
+Home Page
+![Home Page](https://github.com/jerryhuang3/tinyJungle/blob/master/docs/tinyjungle.png)
 
 ## Setup
 
